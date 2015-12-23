@@ -1,0 +1,7 @@
+<% if @instagram.present? %>
+	<% @instagram.each do |ig| %>
+		<%= image_tag ig.images.standard_resolution.url %>
+	<% end %>
+<% else %>
+	<p>There are no posts containing the tag #<%= params[:search] %>.</p>
+<% end %>

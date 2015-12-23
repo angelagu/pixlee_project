@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  collection_id: 1
+  media_url: MyString
+  link: MyString
+  tags: MyString
+  type: 
+
+two:
+  collection_id: 1
+  media_url: MyString
+  link: MyString
+  tags: MyString
+  type: 
