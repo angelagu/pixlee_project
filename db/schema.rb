@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20151223063021) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "collections", force: :cascade do |t|
     t.string   "tag_name"
     t.datetime "created_at", null: false
@@ -26,8 +29,8 @@ ActiveRecord::Schema.define(version: 20151223063021) do
     t.integer "photo_id",      null: false
   end
 
-  add_index "collections_photos", ["collection_id", "photo_id"], name: "index_collections_photos_on_collection_id_and_photo_id", unique: true
-  add_index "collections_photos", ["collection_id"], name: "index_collections_photos_on_collection_id"
+  add_index "collections_photos", ["collection_id", "photo_id"], name: "index_collections_photos_on_collection_id_and_photo_id", unique: true, using: :btree
+  add_index "collections_photos", ["collection_id"], name: "index_collections_photos_on_collection_id", using: :btree
 
   create_table "photos", force: :cascade do |t|
     t.string   "media_url"
